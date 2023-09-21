@@ -1,7 +1,7 @@
 import './styles/global.scss'
 import './styles/theme.scss'
-// import Login from './pages/login/Login'
-// import Register from './pages/register/Register'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
 import Home from './pages/home/Home'
 import Profile from './pages/profile/Profile'
 import NavBar from './components/navBar/NavBar'
@@ -67,14 +67,14 @@ const App = () => {
         },
       ]
     },
-    // {
-    //   path: '/login',
-    //   element: <Login/>
-    // },
-    // {
-    //   path: '/register',
-    //   element: <Register/>
-    // },
+    {
+      path: '/login',
+      element: <Login/>
+    },
+    {
+      path: '/register',
+      element: <Register/>
+    },
   ]);
 
   return (
