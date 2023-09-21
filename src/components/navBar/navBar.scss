@@ -1,0 +1,100 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/theme.scss';
+
+.navBar {
+    @include themify($themes) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      height: 50px;
+      border-bottom: 1px solid themed('border');
+      position: sticky;
+      top: 0;
+      background: themed('bg'); 
+      color: themed('textColor');
+      z-index: 1000;
+
+      @include sm {
+        justify-content: space-evenly;
+      }
+
+      @include md {
+        justify-content: space-evenly;
+      }
+
+      @include lg {
+        justify-content: space-evenly;
+      }
+
+
+    .left{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+        color: themed('logo');
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        border: 1px solid themed('border');
+        border-radius: 5px;
+        padding: 2px;
+        gap: 5px;
+
+        input {
+          border: none;
+          font-size: 12px;
+          width: 300px;
+          padding: 2px;
+          background: transparent;
+          color: themed(textColor);
+
+          @include sm {
+            display: none;
+          }
+
+          @include md {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .right{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include sm {
+        display: none;
+      }
+
+      @include md {
+        display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

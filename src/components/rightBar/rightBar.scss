@@ -1,0 +1,128 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/theme.scss';
+
+.rightBar {
+  @include themify($themes) {
+    flex: 4;
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    background: themed('bgSoft');
+    color: themed('textColor');
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include sm {
+      display: none;
+    }
+
+    @include md {
+      display: none;
+    }
+
+    @include lg {
+      display: none;
+    }
+  
+    .container {
+      padding: 20px;
+      font-size: 12px;
+  
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin-bottom: 20px;
+        background: themed('bg');
+  
+        span {
+          color: themed('textColorSoft');
+        }
+        
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+  
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+  
+            p {
+              color: themed('textColorSoft');
+  
+              span {
+                font-weight: 500;
+                color: themed('textColor');
+              }
+            }
+  
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+  
+            span {
+              font-weight: 500;
+              color: themed('textColor');
+            }
+  
+            .online {
+              width: 12px;
+              height: 12px;
+              background-color: limegreen;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              left: 22px;
+            }
+          }
+  
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+            
+            button {
+              border: none;
+              border: 1px solid transparent;
+              padding: 4px;
+              cursor: pointer;
+              font-size: 12px;
+              color: #fff;
+  
+              &:first-child {
+                background: #5271ff;
+
+                &:hover {
+                  background: transparent;
+                  border: 1px solid #5271ff;
+                  color: #5271ff;
+                }
+              }
+  
+              &:last-child {
+                background: #f0544f;
+
+                &:hover {
+                  background: transparent;
+                  border: 1px solid #f0544f;
+                  color: #f0544f;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
